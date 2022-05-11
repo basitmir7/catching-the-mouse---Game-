@@ -4,17 +4,34 @@ const Modal = document.getElementById("modal");
 const closeBtn = document.getElementById("close-modal-btn");
 const container = document.getElementById("container");
 const ModalTime = document.getElementById("modal-time");
+// var cancelled = false;
+//function to mov the mouse from randomly
+var interval = null;
+startMouse = () => {
+  interval = setInterval(() => {
+    console.log("mouse is moving");
+    Mouse.style.left = Math.floor(Math.random() * 100 + 1) + "%";
+    Mouse.style.top = Math.floor(Math.random() * 100 + 1) + "%";
+  }, 1000);
+};
+stopMouse = () => {
+  // cancelled = true;
+  console.log("canceleed inter");
+  clearInterval(interval);
+};
 
 GameStart = () => {
   Mouse.classList.remove("mouse-stop");
-  Mouse.classList.add("mouse-start");
+  // Mouse.classList.add("mouse-start");
+  startMouse();
   Mouse.addEventListener("click", GameEnds);
   start();
 };
 Start.addEventListener("click", GameStart);
 
 GameEnds = () => {
-  Mouse.classList.add("mouse-stop");
+  // Mouse.classList.add("mouse-stop");
+  stopMouse();
   console.log("stop clicked");
   Modal.classList.add("open-modal");
   container.style.opacity = "0.4";
