@@ -72,7 +72,7 @@ body {
 /* mouse movement css */
 
 .mouse-start {
-  animation: mouse-moving 10s infinite alternate-reverse;
+  animation: mouse-moving 6s infinite alternate-reverse;
   animation-fill-mode: forwards;
 }
 .mouse-stop {
