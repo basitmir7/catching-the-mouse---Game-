@@ -4,6 +4,7 @@ const Modal = document.getElementById("modal");
 const closeBtn = document.getElementById("close-modal-btn");
 const container = document.getElementById("container");
 const ModalTime = document.getElementById("modal-time");
+const gameBody = document.getElementById("gameBody");
 // var cancelled = false;
 //function to mov the mouse from randomly
 var interval = null;
@@ -13,22 +14,27 @@ startMouse = () => {
     Mouse.style.left = Math.floor(Math.random() * 100 + 1) + "%";
     Mouse.style.top = Math.floor(Math.random() * 100 + 1) + "%";
   }, 1000);
+  Mouse.addEventListener("click", GameEnds);
 };
 stopMouse = () => {
   // cancelled = true;
   console.log("canceleed inter");
   clearInterval(interval);
+  gameBody.style.pointerEvents = "none";
 };
 
+//Game start function
 GameStart = () => {
+  gameBody.style.pointerEvents = "all";
   Mouse.classList.remove("mouse-stop");
   // Mouse.classList.add("mouse-start");
   startMouse();
-  Mouse.addEventListener("click", GameEnds);
+
   start();
 };
 Start.addEventListener("click", GameStart);
 
+//Game ends function on clicking the mouse
 GameEnds = () => {
   // Mouse.classList.add("mouse-stop");
   stopMouse();
@@ -54,7 +60,7 @@ closeBtn.addEventListener("click", () => {
   reset();
 });
 
-//
+//Timer functions
 
 let hour = 0;
 let minute = 0;
