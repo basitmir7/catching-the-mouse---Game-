@@ -65,50 +65,12 @@ body {
   width: 66px;
   height: 66px;
   position: absolute;
-  transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
   z-index: 1;
   cursor: pointer;
 }
 /* mouse movement css */
 
-.mouse-start {
-  animation: mouse-moving 6s infinite alternate-reverse;
-  animation-fill-mode: forwards;
-}
-.mouse-stop {
-  animation-play-state: paused;
-}
-
-@keyframes mouse-moving {
-  0% {
-    left: 0;
-    top: 0;
-  }
-  15% {
-    top: 0;
-    left: 100%;
-  }
-  30% {
-    left: 10%;
-    top: 50%;
-  }
-  45% {
-    left: 0;
-    top: 90%;
-  }
-  65% {
-    left: 60%;
-    top: 70%;
-  }
-  85% {
-    left: 90%;
-    top: 10%;
-  }
-  100% {
-    top: 90%;
-    left: 50%;
-  }
-}
 /* modal css */
 
 .modal {
@@ -160,4 +122,46 @@ body {
 }
 .timer span {
   font-size: 25px;
+}
+
+.difficulty-level {
+  position: absolute;
+  display: block;
+  left: 10%;
+  top: 0;
+  font-family: var(--text-font);
+}
+.difficulty-level button {
+  font-size: 20px;
+  border-radius: 2px;
+  border: 2px solid rgb(171, 171, 171);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.difficulty-level button:focus {
+  background: rgb(255, 32, 32);
+
+  border: none;
+}
+.difficulty-level p {
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+/* close button */
+.close-window {
+  position: absolute;
+  top: 0%;
+  right: 2%;
+}
+.close-window i {
+  font-size: 60px;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 150ms;
+}
+.close-window i:hover {
+  transform: scale(1.2);
 }
