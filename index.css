@@ -165,3 +165,44 @@ body {
 .close-window i:hover {
   transform: scale(1.2);
 }
+
+@media only screen and (max-width: 600px) {
+  .difficulty-level {
+    display: flex;
+    flex-direction: column;
+    top: 4%;
+    left: 4%;
+  }
+  .difficulty-level button {
+    font-size: 10px;
+    width: 60%;
+  }
+  .difficulty-level p {
+    font-size: 12px;
+  }
+  .header-section .heading {
+    font-size: 20px;
+  }
+  .header-section {
+    min-height: 11rem;
+  }
+  .btn-start {
+    font-size: 15px;
+  }
+  .timer {
+    font-size: 10px;
+    top: 5%;
+    left: 62%;
+  }
+  .timer span {
+    font-size: 18px;
+  }
+  .close-window i {
+    font-size: 20px;
+  }
+  .game-body {
+    width: 88vw;
+    margin-top: 17px;
+    height: 65vh;
+  }
+}
