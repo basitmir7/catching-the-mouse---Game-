@@ -205,4 +205,8 @@ body {
     margin-top: 17px;
     height: 65vh;
   }
+  .game-body .mouse {
+    width: 45px;
+    height: 45px;
+  }
 }
